@@ -1,0 +1,58 @@
+# Pandas Ödevi - 10 Fonksiyon ve Kullanım Örnekleri
+
+import pandas as pd
+
+# 1. read_csv()
+# Bu fonksiyon bir CSV dosyasından veri okur ve DataFrame'e dönüştürür.
+# Örnek veri için bir DataFrame oluşturalıyor.
+veri = {
+    "ID": [1, 2, 3, 4, 5],
+    "Ad": ["Ali", "Ayşe", "Mehmet", "Zeynep", "Ahmet"],
+    "Fiyat": [100, 200, 150, None, 300],
+    "Kategori": ["A", "B", "A", "B", "A"]
+}
+df = pd.DataFrame(veri)
+print("\nread_csv() örneği yerine DataFrame oluşturuldu:")
+print(df)
+
+# 2. head()
+print("\nhead() fonksiyonu:")
+print(df.head())
+
+# 3. info()
+print("\ninfo() fonksiyonu:")
+df.info()
+
+# 4. describe()
+print("\ndescribe() fonksiyonu:")
+print(df.describe())
+
+# 5. isnull()
+print("\nisnull() fonksiyonu:")
+print(df.isnull())
+
+# 6. fillna()
+print("\nfillna() fonksiyonu:")
+df_filled = df.fillna(0)
+print(df_filled)
+
+# 7. groupby()
+print("\ngroupby() fonksiyonu:")
+grouped = df.groupby("Kategori")["Fiyat"].mean()
+print(grouped)
+
+#  8. sort_values()
+print("\nsort_values() fonksiyonu:")
+sorted_df = df.sort_values(by="Fiyat", ascending=False)
+print(sorted_df)
+
+# 9. merge()
+print("\nmerge() fonksiyonu:")
+df1 = pd.DataFrame({"ID": [1, 2], "Soyad": ["Yılmaz", "Demir"]})
+merged = pd.merge(df, df1, on="ID")
+print(merged)
+
+# 10. apply()
+print("\napply() fonksiyonu:")
+df["Fiyat_Yeni"] = df["Fiyat"].apply(lambda x: x * 1.1 if pd.notnull(x) else x)
+print(df)
