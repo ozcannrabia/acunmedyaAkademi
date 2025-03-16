@@ -1,0 +1,29 @@
+# Ödev: Değişkenler ve Veri Tipleri
+# Konular: int, float, string, boolean, input()
+
+# GÖREV 1: Kullanıcıdan ad, yaş ve doğum yılı alıp yazdırma
+
+# Kullanıcıdan veri alma
+ad = input("Adınızı girin: ")
+yas = int(input("Yaşınızı girin: "))
+dogum_yili = int(input("Doğum yılınızı girin: "))
+
+# Sonucu ekrana yazdırma
+print(f"Merhaba {ad}! {yas} yaşındasın ve {dogum_yili} yılında doğmuşsun.")
+
+# GÖREV 2: İki sayı alıp dört işlem yapma
+
+# Kullanıcıdan sayı alma
+sayi1 = float(input("Birinci sayıyı girin: "))
+sayi2 = float(input("İkinci sayıyı girin: "))
+
+# Dört işlem
+print(f"Toplam: {sayi1 + sayi2}")
+print(f"Fark: {sayi1 - sayi2}")
+print(f"Çarpım: {sayi1 * sayi2}")
+
+# Bölme işleminde sıfıra bölme kontrolü
+if sayi2 != 0:
+    print(f"Bölüm: {sayi1 / sayi2}")
+else:
+    print("Bölme işlemi için ikinci sayı sıfır olamaz!")
